@@ -15,28 +15,21 @@ min
 
 
 
- # F1 2025 Performance Analysis: LEC vs VER 🏎️📊
+ # F1 2025 Factorial Performance Analysis: LEC vs VER 🏎️📊
 
-Progetto di analisi telemetrica avanzata che confronta le prestazioni di **Charles Leclerc (Ferrari)** e **Max Verstappen (Red Bull)** durante la stagione 2025. Il core del progetto utilizza il **Machine Learning** per isolare il potenziale puro delle vetture, eliminando il rumore statistico.
+This repository contains an advanced telemetry analysis framework designed to benchmark Formula 1 car performance. The project focuses on the 2025 season rivalry between **Charles Leclerc (Ferrari)** and **Max Verstappen (Red Bull)**, utilizing **Unsupervised Machine Learning** to isolate pure vehicular potential from session noise.
 
-## 🚀 Key Highlights
-- **Unsupervised ML (K-Means):** Categorizzazione automatica delle curve in 4 cluster dinamici (Slow, Medium, Fast, Power) basata su telemetria reale.
-- **Real Analysis Filter:** Algoritmo proprietario per la rimozione degli outlier (delta >15km/h) causati da traffico o errori, garantendo dati "pure qualifying".
-- **Apex Detection:** Identificazione fisica dell'apice della curva tramite *peak detection* sulla traccia della velocità minima ($V_{min}$).
+## Project Overview
+Unlike standard lap-time comparisons, this project deconstructs performance into its fundamental physical components: **Apex Speed**, **Traction**, and **Braking**. By using a factorial approach, we can identify exactly where a car gains or loses time relative to its competitor.
 
-## 🛠️ Tech Stack
-- **Languages:** Python
-- **Libraries:** FastF1 (Data Source), Pandas, NumPy, SciPy
-- **ML & Stats:** Scikit-learn (StandardScaler, KMeans)
-- **Visualization:** Seaborn, Matplotlib
+## Key Technical Features
+- **ML-Enhanced Categorization:** Uses **K-Means Clustering** ($K=4$) to automatically segment over 200+ corner instances into dynamic regimes: *Slow (Traction)*, *Medium (Handling)*, *Fast (Downforce)*, and *Power*.
+- **"Real Analysis" Filter:** A custom data-cleaning pipeline that rejects outliers (deltas >15-20 km/h) caused by traffic, yellow flags, or driver errors, ensuring a "pure qualifying" comparison.
+- **Automated Apex Detection:** Implements a bespoke algorithm using `scipy.signal.find_peaks` to identify the precise physical apex ($V_{min}$) based on telemetry traces rather than static track maps.
 
-## 📈 Insights Generati
-Il modello ha rivelato che la **Ferrari SF-24** eccelle nella velocità di percorrenza a centro curva (+3.34 km/h nelle medie), mentre la **Red Bull RB21** domina in efficienza frenante e stabilità aerodinamica ad alto carico, permettendo a Verstappen di tornare sul gas prima nonostante una $V_{min}$ inferiore.
 
-## 📂 Struttura del Repository
-- `F1_Analysis_Notebook.ipynb`: Il motore principale dell'analisi.
-- `/plots`: Esportazione dei grafici (Heatmap fattoriali e Delta Speed).
-- `/data`: (Opzionale) Script per il caching dei dati FastF1.
-
----
-*Developed for advanced motorsport data driving and performance benchmarking.*
+## Tech Stack
+- **Data Source:** `FastF1` API (Official Timing & Telemetry).
+- **Processing:** `Pandas`, `NumPy`, `SciPy`.
+- **Machine Learning:** `Scikit-learn` (StandardScaler, KMeans).
+- **Visualization:** `Seaborn`, `Matplotlib`.
