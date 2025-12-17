@@ -1,5 +1,5 @@
 # F1_telemetry_analysis
-This project provides an advanced technical comparison between the performance profiles of Charles Leclerc (Ferrari SF-24) and Max Verstappen (Red Bull RB21) during the 2025 Formula 1 season. By leveraging Unsupervised Machine Learning (K-Means Clustering) and custom telemetry processing, the analysis deconstructs lap times into specific dynamic factors: Speed, Traction, and Braking.
+This project provides an advanced technical comparison between the performance profiles of Charles Leclerc (Ferrari SF-25) and Max Verstappen (Red Bull RB21) during the 2025 Formula 1 season. By leveraging Unsupervised Machine Learning (K-Means Clustering) and custom telemetry processing, the analysis deconstructs lap times into specific dynamic factors: Speed, Traction, and Braking.
 
 Key Features
 
